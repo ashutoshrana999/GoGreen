@@ -9,7 +9,7 @@ const Favorite = () => {
   const [products, setProducts] = useState([]);
   
     useEffect(() => {
-    fetch("http://localhost:8080/api/products")
+    fetch(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

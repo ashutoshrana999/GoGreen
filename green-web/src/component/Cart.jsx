@@ -123,12 +123,12 @@ const Cart = () => {
                     {/* Price */}
                     <div className="mt-3">
                       <span className="text-xl font-semibold text-gray-900">
-                        ${item.price}
+                        ₹{item.price}
                       </span>
 
                       {item.oldPrice && (
                         <span className="ml-2 text-sm text-gray-400 line-through">
-                          ${item.oldPrice}
+                          ₹{item.oldPrice}
                         </span>
                       )}
                     </div>
@@ -160,7 +160,7 @@ const Cart = () => {
 
                       {/* Item total */}
                       <p className="text-lg font-semibold text-gray-900">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        ₹{(item.price * item.quantity).toFixed(2)}
                       </p>
 
                     </div>
@@ -195,7 +195,7 @@ const Cart = () => {
               </span>
 
               <span className="font-medium">
-                ${subtotal.toFixed(2)}
+                ₹{subtotal.toFixed(2)}
               </span>
             </div>
 
@@ -206,7 +206,7 @@ const Cart = () => {
               </span>
 
               <span className="font-medium">
-                ${shipping.toFixed(2)}
+                ₹{shipping.toFixed(2)}
               </span>
             </div>
 
@@ -219,7 +219,7 @@ const Cart = () => {
               </span>
 
               <span className="text-2xl font-bold">
-                ${total.toFixed(2)}
+                ₹{total.toFixed(2)}
               </span>
             </div>
 

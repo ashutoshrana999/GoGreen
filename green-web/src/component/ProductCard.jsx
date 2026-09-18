@@ -28,11 +28,11 @@ const ProductCard = ({ product}) => {
 
     <div className="flex justify-center gap-2 mt-2">
       <span className="text-gray-500 line-through">
-        ${product.oldPrice}
+        ₹{product.oldPrice}
       </span>
 
       <span className="text-lg">
-        ${product.price}
+        ₹{product.price}
       </span>
     </div>
    <Link to={`/product/${product._id}`} >

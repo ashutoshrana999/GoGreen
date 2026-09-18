@@ -20,19 +20,21 @@ const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     console.log("ADDING TO CART:", product);
     setCart((prevCart) => {
-      const existingProduct = prevCart.find(
-        (item) => item.id === product.id
-      );
+      const productId = product._id || product.id;
+
+const existingProduct = prevCart.find(
+  (item) => (item._id || item.id) === productId
+);
 
       if (existingProduct) {
         return prevCart.map((item) =>
-          item.id === product.id
-            ? {
-                ...item,
-                quantity: item.quantity + 1,
-              }
-            : item
-        );
+        (item._id || item.id) === productId
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item
+      );
       }
 
       return [

@@ -1,5 +1,4 @@
 import React from 'react'
-import products from "../data/products";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
@@ -29,7 +28,7 @@ const Productdetails = () => {
 const [product, setProduct] = useState(null);
 
 useEffect(() => {
-  fetch(`http://localhost:8080/api/products/${id}`)
+  fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log("PRODUCT:", data);

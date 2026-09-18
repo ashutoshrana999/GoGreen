@@ -46,7 +46,7 @@ const Checkout = () => {
   }
 
   try {
-    const response = await fetch("http://localhost:8080/api/orders", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
       method: "POST",
 
       headers: {
@@ -55,18 +55,25 @@ const Checkout = () => {
       },
 
       body: JSON.stringify({
-        items: cart,
-        totalAmount: total,
+  items: cart.map((item) => ({
+    product: item._id || item.id,
+    name: item.name,
+    price: item.price,
+    quantity: item.quantity,
+    image: item.image,
+  })),
 
-        shippingAddress: {
-          name: formData.name,
-          phone: formData.phone,
-          address: formData.address,
-          city: formData.city,
-          state: formData.state,
-          pincode: formData.pincode,
-        },
-      }),
+  totalAmount: total,
+
+  shippingAddress: {
+    name: formData.name,
+    phone: formData.phone,
+    address: formData.address,
+    city: formData.city,
+    state: formData.state,
+    pincode: formData.pincode,
+  },
+}),
     });
 
     
@@ -303,7 +310,7 @@ if (response.ok && data.success) {
               type="submit"
               className="mt-8 w-full rounded-lg bg-[#075c32] py-4 font-semibold text-white transition hover:bg-[#064a29]"
             >
-              Place Order • ${total.toFixed(2)}
+              Place Order • ₹{total.toFixed(2)}
             </button>
           </form>
 
@@ -318,7 +325,7 @@ if (response.ok && data.success) {
             <div className="space-y-5">
               {cart.map((item) => (
                 <div
-                  key={item.id}
+                  key={item._id}
                   className="flex items-center gap-4"
                 >
                   <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/10">
@@ -340,7 +347,7 @@ if (response.ok && data.success) {
                   </div>
 
                   <p className="font-medium">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₹{(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
               ))}
@@ -354,7 +361,7 @@ if (response.ok && data.success) {
               </span>
 
               <span>
-                ${subtotal.toFixed(2)}
+                ₹{subtotal.toFixed(2)}
               </span>
             </div>
 
@@ -364,7 +371,7 @@ if (response.ok && data.success) {
               </span>
 
               <span>
-                ${shipping.toFixed(2)}
+                ₹{shipping.toFixed(2)}
               </span>
             </div>
 
@@ -376,7 +383,7 @@ if (response.ok && data.success) {
               </span>
 
               <span className="text-2xl font-bold">
-                ${total.toFixed(2)}
+                ₹{total.toFixed(2)}
               </span>
             </div>
           </div>
