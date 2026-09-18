@@ -60,11 +60,11 @@ useEffect(() => {
                 </h2>
                 <div className="flex gap-2 mt-2 py-3">
                     <span className="text-gray-500 text-2xl line-through">
-                        ${product.oldPrice}
+                        ₹{product.oldPrice}
                     </span>
 
                     <span className="text-2xl">
-                        ${product.price}
+                        ₹{product.price}
                     </span>
                 </div>
                 <div>
