@@ -16,7 +16,7 @@ const Profile = () => {
     }
 
     // Get user profile
-    fetch("http://localhost:8080/auth/profile", {
+    fetch(`${import.meta.env.VITE_API_URL}/auth/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -29,7 +29,7 @@ const Profile = () => {
       });
 
     // Get user's orders
-    fetch("http://localhost:8080/api/orders/my-orders", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders/my-orders`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

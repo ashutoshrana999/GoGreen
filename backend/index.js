@@ -10,13 +10,22 @@ require('dotenv').config();
 
 require('./Models/db');
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://YOUR-NETLIFY-SITE.netlify.app"
-  ]
-}));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://gogreenweb.netlify.app"
+];
 
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    }
+  })
+);
 const PORT=process.env.PORT || 8080;
 
 app.use(bodyParser.json());
