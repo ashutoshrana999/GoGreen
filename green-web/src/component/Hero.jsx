@@ -19,7 +19,9 @@ const Hero = () => {
                     
                 </div>
                 <div className='px-15 py-3'>
+                    <Link to="/shop" >
                     <button className='px-15 font-medium rounded-xl  bg-green-900 border-none h-10 w-50 p-0'>Shop Now</button>
+                    </Link>
                 </div>
             </div>
         </div>
