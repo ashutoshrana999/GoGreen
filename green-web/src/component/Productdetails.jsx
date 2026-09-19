@@ -31,7 +31,6 @@ useEffect(() => {
   fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log("PRODUCT:", data);
       setProduct(data);
     })
     .catch((error) => {
@@ -39,8 +38,8 @@ useEffect(() => {
     });
 }, [id]);
 
-  if (!product) {
-  return <h1>Product not found</h1>;
+ if (!product) {
+  return <ProductSkeleton />;
 }
 
 
