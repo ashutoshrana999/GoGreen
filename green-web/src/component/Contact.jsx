@@ -6,7 +6,13 @@ const Contact = () => {
     <div>
       <div className='flex flex-col items-center py-20'>
         <div className='font-serif p-20'>
-          <h2 className='font-bold text-3xl text-green-500 text-center'>Get in Touch</h2>
+          <h2 className='font-bold text-3xl
+                                rounded-3xl
+                                bg-gradient-to-br
+                                from-[#e8fff0]
+                                via-[#a7f3c5]
+                                to-[#43b978]
+                '>Get in Touch</h2>
           <h4 className='text-center py-2 font-light text-xl'>
             We'd Love to Hear From You
           </h4>
