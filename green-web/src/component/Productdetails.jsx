@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ProductSkeleton from "./ProductSkeleton";
 
 
 const Productdetails = () => {
