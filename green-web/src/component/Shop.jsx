@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import Footer from "./Footer";
+
 // import products from "../data/products";
 import { useEffect, useState } from "react";
 
@@ -56,7 +56,7 @@ const Shop = () => {
      
 
     </section>
-    <Footer/>
+  
      </div>
     
   );
