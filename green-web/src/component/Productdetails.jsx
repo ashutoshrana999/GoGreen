@@ -47,7 +47,10 @@ useEffect(() => {
   return (
     <div>
         <div className='flex md:flex-row flex-col h-250 w-full p-10 gap-5 font-serif '>
-            <div className='md:h-150 items-center  md:w-[40%] bg-gradient-to-br from-[#eef8e8] via-[#c8e8b8] to-[#79b86a]rounded-3xl'>
+            <div className='md:h-150 items-center  md:w-[40%] bg-gradient-to-br
+  from-[#e8fff0]
+  via-[#a7f3c5]
+  to-[#43b978] rounded-3xl'>
                 <img className='h-110 md:h-140 md:object-fit object-cover px-5' src={product.image} alt="" />
 
             </div >
