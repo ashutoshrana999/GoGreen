@@ -8,7 +8,7 @@ app.use(express.json());
 
 const mongo_url = process.env.MONGO_CONN;
 
-mongoose.connect(mongo_url).then(()=>{
+await mongoose.connect(mongo_url).then(()=>{
     console.log("mongodb connected");
 })
 .catch((err)=>{
